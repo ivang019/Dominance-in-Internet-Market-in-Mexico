@@ -11,7 +11,7 @@ Accesos_Internet <- Accesos_Internet %>%
 
 # Paso 3: Procesamiento y dominancia
 SBAF_ACCESOS <- Accesos_Internet %>%
-  filter(ANIO == 2023, MES == 9) %>%
+  filter(ANIO == 2025, MES == 12) %>%
   mutate(K_E_M = paste(K_ENTIDAD, K_MUNICIPIO, sep = "-")) %>%
   group_by(K_E_M) %>%
   mutate(A_TOTAL_M = sum(A_TOTAL_E)) %>%
@@ -37,4 +37,5 @@ SBAF_ACCESOS <- Accesos_Internet %>%
   ungroup()
 
 # Paso 4: Exportar a Excel
+
 write_xlsx(SBAF_ACCESOS, path = "SBAF_ACCESOS_MUNICIPIO_IHH.xlsx")
