@@ -4,7 +4,6 @@
 
 This project applies the dominance index of Melnik, Shy and Stenbacka (2008) to public data from Mexico's telecommunications statistics database (Banco de Información de Telecomunicaciones, BIT). The index is computed independently for each of 2,475 municipalities across 148 periods (monthly from 2013 to 2024, quarterly in 2025), using as many competitors as are reported in each municipality.
 
-The full write-up (in Spanish) is in [`docs/`](docs/). This README summarizes its method, findings and limits in English.
 
 ## Key findings
 
@@ -18,11 +17,11 @@ The full write-up (in Spanish) is in [`docs/`](docs/). This README summarizes it
 
 **2. One national operator leads almost everywhere.** América Móvil is the dominant group in 896 of the 1,286 municipalities with a dominant group (69.7%), followed by Megacable (230) and Grupo Televisa (127).
 
-**3. Competition is geographically uneven.** Large urban markets tend to be the most competitive, while regional operators such as Megacable and Grupo Salinas split the mid-sized and small municipalities that the national operator does not contest. Baja California illustrates the pattern (see [Results](#results)).
+**3. Competition is geographically uneven.** Large urban markets tend to be the most competitive, while regional operators such as Megacable and Grupo Salinas split the mid-sized and small municipalities that the national operator does not contest. Baja California illustrates the pattern.
 
 **4. The long-run trend must be read with caution.** The time series has sharp breaks (notably April 2015 and January 2020) that coincide with large jumps in how many operators report to the BIT. A relevant part of the observed "opening of markets" is likely a reporting artifact, not a sudden change in market structure. The December 2025 cross-section is the most reliable cut.
 
-![Dominance type by municipality, December 2025](figures/map1_dominance_type_dec2025.png)
+![Dominance type by municipality, December 2025](map1_dominance_type_dec2025.png)
 
 *Map 1. Dominance type by municipality, December 2025. Source: author's calculations with BIT data. Legend labels are in Spanish: dominancia = dominance, monopolio = monopoly, no dominancia = no dominance, NA = no data reported.*
 
@@ -61,7 +60,7 @@ The analysis is presented at two levels: the full monthly series (2013–2025) f
 
 Between 2013 and 2019 the share of municipalities classified as monopoly falls steadily, while the share classified as dominance (a clear leader with at least one competitor) rises. This is consistent with a gradual opening of markets previously served by a single provider.
 
-![Evolution of dominance type across municipalities](figures/fig1_dominance_evolution.png)
+![Evolution of dominance type across municipalities](fig1_dominance_evolution.png)
 
 *Figure 1. Monthly evolution of dominance type by municipality (% of municipalities), 2013–2025. Source: author's calculations with BIT data. Vertical lines: telecommunications constitutional reform (June 11, 2013) and the declaration of América Móvil as preponderant economic agent (March 6, 2014).*
 
@@ -83,17 +82,17 @@ An unanticipated pattern is the geographic concentration of municipalities with 
 
 Figure 2 ranks the groups by number of dominated municipalities: América Móvil first, followed at a considerable distance by Megacable, Grupo Televisa, Netwey and Grupo Salinas.
 
-![Municipalities dominated by economic group](figures/fig2_municipalities_by_group.png)
+![Municipalities dominated by economic group](fig2_municipalities_by_group.png)
 
 *Figure 2. Municipalities dominated by economic group, 2013–2025. Source: author's calculations with BIT data. The five groups with the largest presence are shown; the rest are grouped as "Otros" (Others).*
 
 Three cuts show the pattern. Grupo Televisa led in January 2013 (28 municipalities, against 17 for Megacable and 13 for América Móvil). By July 2019 América Móvil led with 334 municipalities (Megacable 169, Televisa 50), and in December 2025 it dominates 896. As described above, these comparisons across periods are affected by changes in reporting coverage.
 
-![Municipalities dominated by group, three time cuts](figures/fig3_municipalities_by_group_three_cuts.png)
+![Municipalities dominated by group, three time cuts](municipalities_by_group_three_cuts.png)
 
 *Figure 3. Municipalities dominated by group at three cuts: January 2013, July 2019 and December 2025. Source: author's calculations with BIT data.*
 
-![Dominant economic group by municipality, December 2025](figures/map2_dominant_group_dec2025.png)
+![Dominant economic group by municipality, December 2025](map2_dominant_group_dec2025.png)
 
 *Map 2. Dominant economic group by municipality, December 2025. Source: author's calculations with BIT data. Only the five groups with the largest presence are shown; the rest are grouped as "Otros" (Others).*
 
@@ -146,7 +145,7 @@ figures/     Figures used in this README
 
 ## How to replicate
 
-1. Get the data from `data/` (see [`data/README.md`](data/README.md)).
+1. Get the data from `data/` (see [`data/README.md`](README.md)).
 2. Open `R/Dominancia.R` and change the three paths in the *Parámetros* block (instructions are in the comments).
 3. Install the packages: `dplyr`, `readr`, `ggplot2`, `lubridate`, `openxlsx`, `sf`, `stringi`, `forcats`.
 4. Run the script. It writes charts, maps and tables to the output folder.
